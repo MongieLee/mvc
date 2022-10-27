@@ -3,9 +3,11 @@ package cn.mgl.config;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Configuration
 @ComponentScan("cn.mgl.controller")
+@EnableWebMvc
 public class SpringMvcConfig {
     /**
      * 1. Configuration 相当于定义类SpringMvcConfig.xml配置文件

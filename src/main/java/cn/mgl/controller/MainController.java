@@ -1,27 +1,24 @@
 package cn.mgl.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import cn.mgl.pojo.User;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
-import java.util.HashMap;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @RestController
 public class MainController {
-
-    /**
-     * 相当于Servlet的路径
-     * @return
-     */
-    @RequestMapping("/getSome")
-    @ResponseBody
-    public String getSome() {
-        System.out.println(123);
-//        Map<String, Object> result = new HashMap();
-//        result.put("code", 200);
-//        result.put("msg", "ok");
+    @PostMapping("/getSome")
+    public String getSome(HttpServletRequest request) {
+        System.out.println(request.getParameter("id"));
+        System.out.println(request.getParameter("username"));
+        ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest req = requestAttributes.getRequest();
+        System.out.println(req == request);
         return "123";
     }
 }
