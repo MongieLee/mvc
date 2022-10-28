@@ -1,18 +1,38 @@
 package cn.mgl.config;
 
-import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import cn.mgl.interceptor.LoginInterceptor;
+import jdk.nashorn.internal.scripts.JD;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.context.annotation.*;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.config.annotation.*;
 
 @Configuration
 @ComponentScan("cn.mgl.controller")
-@EnableWebMvc
-public class SpringMvcConfig {
+@Import(LoginInterceptor.class)
+public class SpringMvcConfig extends WebMvcConfigurationSupport {
     /**
      * 1. Configuration 相当于定义类SpringMvcConfig.xml配置文件
      * 2。 需要将Controller进行注册，添加@ComponentScan进行扫包
      * 3。 再SpringMvc原理中，所有请求过来会先达到DispatchServlet 分发具体控制类方法执行
      */
+    private LoginInterceptor loginInterceptor;
 
+    public SpringMvcConfig(LoginInterceptor loginInterceptor) {
+        this.loginInterceptor = loginInterceptor;
+    }
+
+    @Override
+    protected void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("*")
+                .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTION")
+                .maxAge(3600);
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(loginInterceptor);
+    }
 }
