@@ -1,11 +1,9 @@
 package cn.mgl.config;
 
-import org.apache.ibatis.session.Configuration;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.core.io.Resource;
 
 import javax.sql.DataSource;
 

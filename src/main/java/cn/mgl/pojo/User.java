@@ -4,16 +4,6 @@ public class User {
     private Long id;
     private String username;
 
-    private Car car;
-
-    public Car getCar() {
-        return car;
-    }
-
-    public void setCar(Car car) {
-        this.car = car;
-    }
-
     public Long getId() {
         return id;
     }

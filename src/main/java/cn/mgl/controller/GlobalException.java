@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalException {
     @ExceptionHandler(Exception.class)
-    public Object exception() {
-        return "Exception";
+    public Object exception(Exception e) {
+        e.printStackTrace();
+        return e.getMessage();
     }
 
     @ExceptionHandler(ArithmeticException.class)

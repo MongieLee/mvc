@@ -3,6 +3,7 @@ package cn.mgl.config;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class ServletConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
+    @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class[]{SpringConfig.class};
     }
@@ -10,8 +11,10 @@ public class ServletConfig extends AbstractAnnotationConfigDispatcherServletInit
     @Override
     protected Class<?>[] getServletConfigClasses() {
         return new Class[]{SpringMvcConfig.class};
+//        return new Class[]{};
     }
 
+    @Override
     protected String[] getServletMappings() {
         return new String[]{"/"};
     }

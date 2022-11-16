@@ -5,7 +5,9 @@ import cn.mgl.service.UserService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/users")
@@ -18,33 +20,41 @@ public class UserController {
 
     @GetMapping("/{id}")
     public Object selectById(@PathVariable("id") Long id) {
-        User userById = userService.getUserById(id);
-        if (userById != null) {
-            System.out.println(userById.getUsername());
-        }
-        return userById;
+        return userService.getUserById(id);
     }
 
     @PutMapping
     public Object update(@RequestBody User user) {
-        userService.update(user);
-        return null;
+        int i = userService.update(user);
+        return i == 1 ? "更新成功" : "更新失败";
     }
 
     @PostMapping
     public Object insert(@RequestBody User user) {
         userService.insert(user);
-        return null;
+        return "新增成功";
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public Object delete(@PathVariable("id") Long id) {
+        int i = userService.delete(id);
+        return i == 1 ? "删除成功" : "删除失败";
     }
 
     @GetMapping
     public Object selectAll(Integer pageNo, Integer pageSize) {
-        System.out.println(pageNo);
-        System.out.println(pageSize);
+        if (pageNo == null) {
+            pageNo = 1;
+        }
+        if (pageSize == null) {
+            pageSize = 10;
+        }
         List<User> all = userService.getAll(pageNo, pageSize);
-        all.forEach(System.out::println);
         PageInfo<User> tPageInfo = new PageInfo<>(all);
         System.out.println(tPageInfo.getTotal());
-        return all;
+        Map<String, Object> result = new HashMap<>();
+        result.put("result", all);
+        result.put("total", tPageInfo.getTotal());
+        return result;
     }
 }

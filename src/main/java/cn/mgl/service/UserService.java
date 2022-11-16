@@ -32,9 +32,7 @@ public class UserService {
 
     @Transactional(rollbackFor = Exception.class)
     public int insert(User user) {
-        Integer i = userDao.insert(user);
-        int o = 1 / 0;
-        return i;
+        return userDao.insert(user);
     }
 
     public int delete(Long id) {
