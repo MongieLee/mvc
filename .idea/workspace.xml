@@ -11,16 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7939c11d-b664-4fcd-8021-112f382125c1" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/mgl/config/JDBCConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/mgl/config/JDBCConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/mgl/config/MybatisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/mgl/config/MybatisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mgl/config/ServletConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/mgl/config/ServletConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/mgl/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/mgl/config/SpringConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mgl/config/SpringMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/mgl/config/SpringMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mgl/controller/GlobalException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/mgl/controller/GlobalException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mgl/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/mgl/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mgl/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/mgl/pojo/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/mgl/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/mgl/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,8 +219,16 @@
       <workItem from="1668155592456" duration="1123000" />
       <workItem from="1668407438727" duration="9860000" />
       <workItem from="1668474100703" duration="14683000" />
-      <workItem from="1668560637880" duration="3411000" />
+      <workItem from="1668560637880" duration="7311000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1668565689813</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668565689813</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

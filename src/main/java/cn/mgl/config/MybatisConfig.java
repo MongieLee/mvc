@@ -7,12 +7,6 @@ import org.springframework.context.annotation.Bean;
 
 import javax.sql.DataSource;
 
-
-/**
- * @author MongieLee
- * @version 1.0
- * @date 2022/10/28 11:14
- */
 public class MybatisConfig {
     @Bean
     @Autowired

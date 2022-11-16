@@ -10,11 +10,6 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
 
-/**
- * @author MongieLee
- * @version 1.0
- * @date 2022/10/28 10:53
- */
 @PropertySource("classpath:jdbc.properties")
 public class JDBCConfig {
     @Value("${jdbc.username}")
